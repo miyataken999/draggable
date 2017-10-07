@@ -31,7 +31,8 @@ export default class Accessibility {
 
   _onInit() {
     for (const container of this.containerElements) {
-      const draggableElements = container.querySelectorAll(this.draggable.options.draggable);
+      const draggableSelector = this.draggable.options.handle || this.draggable.options.draggable;
+      const draggableElements = container.querySelectorAll(draggableSelector);
 
       this.draggableElements = [
         ...this.draggableElements,
