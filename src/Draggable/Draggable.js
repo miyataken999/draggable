@@ -231,6 +231,7 @@ export default class Draggable {
     this.source.classList.add(this.getClassNameFor('source:dragging'));
     this.sourceContainer.classList.add(this.getClassNameFor('container:dragging'));
     document.body.classList.add(this.getClassNameFor('body:dragging'));
+    document.body.style.userSelect = 'none';
 
     if (this.mirror) {
       const mirrorMoveEvent = new MirrorMoveEvent({
@@ -403,6 +404,7 @@ export default class Draggable {
     this.sourceContainer.classList.add(this.getClassNameFor('container:placed'));
     this.sourceContainer.classList.remove(this.getClassNameFor('container:dragging'));
     document.body.classList.remove(this.getClassNameFor('body:dragging'));
+    document.body.style.userSelect = '';
 
     if (this.currentOver) {
       this.currentOver.classList.remove(this.getClassNameFor('draggable:over'));
